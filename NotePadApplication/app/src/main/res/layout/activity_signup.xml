@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#f9f9f9"
+    tools:context=".signup">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:id="@+id/centerLine">
+        android:id="@+id/centerLine2">
     </RelativeLayout>
 
     <LinearLayout
@@ -25,7 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome Back!"
+            android:text="New User"
             android:textColor="#FFBD4D"
             android:gravity="center"
             android:textSize="42sp"
@@ -36,36 +38,37 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log in to Continue"
+            android:text="Nice To See You Here"
             android:gravity="center"
             android:textColor="#FF8596"
             android:textSize="23sp">
 
         </TextView>
     </LinearLayout>
-<com.google.android.material.textfield.TextInputLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_above="@+id/centerLine"
-    android:layout_marginBottom="10dp"
-    android:id="@+id/email"
-    android:layout_marginRight="30dp"
-    android:layout_marginLeft="30dp"
-    >
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/loginemail"
-        android:hint="Enter Your Email"
-        android:inputType="textEmailAddress"
-        >
 
-    </EditText>
-</com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/centerLine"
+        android:layout_above="@+id/centerLine2"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/email"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signupemail"
+            android:hint="Enter Your Email"
+            >
+
+        </EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/centerLine2"
         android:layout_marginTop="10dp"
         android:id="@+id/password"
         android:layout_marginRight="30dp"
@@ -75,9 +78,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/loginpassword"
+            android:id="@+id/signuppassword"
             android:hint="Enter Your Password"
-            android:inputType="textEmailAddress"
             >
 
         </EditText>
@@ -91,7 +93,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/button_design"
         android:layout_below="@+id/password"
-        android:id="@+id/login"
+        android:id="@+id/signup"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -99,46 +101,24 @@
             android:textStyle="bold"
             android:layout_marginStart="8dp"
             android:textSize="16sp"
-            android:text="Log In"
+            android:text="Sign Up"
             android:layout_centerInParent="true"
             android:textColor="@color/white">
 
         </TextView>
     </RelativeLayout>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Forgot Password"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:id="@+id/gotoforgotpassword"
-    android:textColor="@color/black"
-    android:layout_below="@+id/login"
-    android:layout_marginTop="10dp"
-    android:textAlignment="center"></TextView>
 
-
-    <RelativeLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/button_design"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/gotosignup"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_marginStart="8dp"
-            android:textSize="16sp"
-            android:text="New User! Want to sign In ?"
-            android:layout_centerInParent="true"
-            android:textColor="@color/white">
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Want to Login ?"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/black"
+        android:layout_below="@id/signup"
+        android:id="@+id/gotologin"
+        android:layout_marginTop="70dp">
 
-        </TextView>
-
-    </RelativeLayout>
+    </TextView>
 </RelativeLayout>
