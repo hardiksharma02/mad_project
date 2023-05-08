@@ -2,5 +2,5 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Android API 31 Platform" project-jdk-type="Android SDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK" />
 </project>

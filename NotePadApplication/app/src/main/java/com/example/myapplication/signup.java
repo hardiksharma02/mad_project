@@ -16,6 +16,8 @@ public class signup extends AppCompatActivity {
     private RelativeLayout msignup;
     private TextView mgotologin;
 
+    private FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +30,33 @@ public class signup extends AppCompatActivity {
         msignup=findViewById(R.id.signup);
         mgotologin=findViewById(R.id.gotologin);
 
+        firebaseAuth= FirebaseAuth.getInstance();
+
         mgotologin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Intent intent =new Intent(signup.this,MainActivity.class);
-                    startActivity(intent);
+                String mail=msignupmail.getText().toString().trim();
+                String password= msignuppassword.getText().toString().trim();
+
+
+                if(mail.isEmpty() || password.isEmpty())
+                {
+
+                    Toast.makeText(getApplicationContext(), "All Fields are Required", Toast.LENGTH_SHORT).show();
+
+                }
+
+                else if(password.length(<7)){
+                    Toast.makeText(getApplicationContext(), "Password Should Greater than 7 Digits", Toast.LENGTH_SHORT).show();
+
+                }
+
+                else{
+                    firebaseAuth.createUserWithEmailAndPassword(mail,password).addOnCompleteListener(new On)
+                }
+
+//                    Intent intent =new Intent(signup.this,MainActivity.class);
+//                    startActivity(intent);
             }
         });
 
