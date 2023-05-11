@@ -128,15 +128,16 @@
         android:layout_alignParentBottom="true"
         android:id="@+id/gotosignup"
         >
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_marginStart="8dp"
-            android:textSize="16sp"
-            android:text="New User! Want to sign In ?"
             android:layout_centerInParent="true"
-            android:textColor="@color/white">
+            android:layout_marginStart="8dp"
+            android:text="New User! Want to sign In ?"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold">
 
         </TextView>
 
