@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
 
-    ProgressBar mprogressbarofmainactivity;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     // login the user
-                    mprogressbarofmainactivity.setVisibility(View.VISIBLE);
 
                     firebaseAuth.signInWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -95,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                             else
                             {
                                 Toast.makeText(getApplicationContext(),"Account Doesn't Exist",Toast.LENGTH_SHORT).show();
-                                mprogressbarofmainactivity.setVisibility(View.INVISIBLE);
+
                             }
 
 
@@ -116,11 +113,10 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(getApplicationContext(),"Logged In",Toast.LENGTH_SHORT).show();
             finish();
-            //startActivity(new Intent(MainActivity.this,notesactivity.class));
+            startActivity(new Intent(MainActivity.this,HomePage.class));
         }
         else
         {
-            mprogressbarofmainactivity.setVisibility(View.INVISIBLE);
             Toast.makeText(getApplicationContext(),"Verify your mail first",Toast.LENGTH_SHORT).show();
             firebaseAuth.signOut();
         }
