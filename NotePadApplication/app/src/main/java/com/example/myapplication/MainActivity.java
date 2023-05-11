@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(getApplicationContext(),"Logged In",Toast.LENGTH_SHORT).show();
             finish();
-            startActivity(new Intent(MainActivity.this,HomePage.class));
+            //startActivity(new Intent(MainActivity.this,notesactivity.class));
         }
         else
         {
