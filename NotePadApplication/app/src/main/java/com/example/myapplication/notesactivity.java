@@ -61,17 +61,17 @@ protected void onCreate(Bundle savedInstanceState){
             return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item)
-    {
-        switch (item.getItemId()){
-            case R.id.logout:
-                firebaseAuth.signOut();
-                finish();
-                startActivity(new Intent(notesactivity.this, MainActivity.class));
-        }
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+//    {
+//        switch (item.getItemId()){
+//            case R.id.logout:
+//                firebaseAuth.signOut();
+//                finish();
+//                startActivity(new Intent(notesactivity.this, MainActivity.class));
+//        }
 
-        return super.onOptionsItemSelected(item);
-    }
+//        return super.onOptionsItemSelected(item);
+//    }
 
 }
