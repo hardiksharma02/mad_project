@@ -21,10 +21,7 @@
 //import com.google.android.material.floatingactionbutton.FloatingActionButton;
 //import com.google.firebase.auth.FirebaseAuth;
 //
-///**
-// * An example full-screen activity that shows and hides the system UI (i.e.
-// * status bar and navigation/system bar) with user interaction.
-// */
+
 //public class notesactivity extends AppCompatActivity {
 //    FloatingActionButton mcreatenotefab;
 //    private FirebaseAuth firebaseAuth;
@@ -80,6 +77,10 @@
 package com.example.notesapptutorial;
 
 import static java.time.LocalDateTime.now;
+
+
+// * An example full-screen activity that shows and hides the system UI (i.e.
+// * status bar and navigation/system bar) with user interaction.
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
