@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.notesapptutorial;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,20 +26,22 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
 
+    ProgressBar mprogressbarofmainactivity;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        getSupportActionBar().hide();
+        getSupportActionBar().hide();
 
         mloginemail=findViewById(R.id.loginemail);
         mloginpassword=findViewById(R.id.loginpassword);
         mlogin=findViewById(R.id.login);
         mgotoforgotpassword=findViewById(R.id.gotoforgotpassword);
         mgotosignup=findViewById(R.id.gotosignup);
-        //mprogressbarofmainactivity=findViewById(R.id.progressbarofmainactivity);
+        mprogressbarofmainactivity=findViewById(R.id.progressbarofmainactivity);
 
         firebaseAuth=FirebaseAuth.getInstance();
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
@@ -57,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       mgotoforgotpassword.setOnClickListener(new View.OnClickListener() {
+        mgotoforgotpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,forgotpassword.class));
+                startActivity(new Intent(MainActivity.this,fogotpassword.class));
             }
         });
 
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     // login the user
+                    mprogressbarofmainactivity.setVisibility(View.VISIBLE);
 
                     firebaseAuth.signInWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -92,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                             else
                             {
                                 Toast.makeText(getApplicationContext(),"Account Doesn't Exist",Toast.LENGTH_SHORT).show();
-
+                                mprogressbarofmainactivity.setVisibility(View.INVISIBLE);
                             }
 
 
@@ -117,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
+            mprogressbarofmainactivity.setVisibility(View.INVISIBLE);
             Toast.makeText(getApplicationContext(),"Verify your mail first",Toast.LENGTH_SHORT).show();
             firebaseAuth.signOut();
         }
