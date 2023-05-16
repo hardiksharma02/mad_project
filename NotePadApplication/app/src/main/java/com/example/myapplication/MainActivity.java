@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         firebaseAuth=FirebaseAuth.getInstance();
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
 
-//        if(firebaseUser!=null)
-//        {
-//            finish();
-//            startActivity(new Intent(MainActivity.this,notesactivity.class));
-//        }
+        if(firebaseUser!=null)
+        {
+            finish();
+            startActivity(new Intent(MainActivity.this,notesactivity.class));
+        }
 
         mgotosignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,12 +57,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        mgotoforgotpassword.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this,fogotpassword.class));
-//            }
-//        });
+       mgotoforgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,forgotpassword.class));
+            }
+        });
 
 
         mlogin.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(getApplicationContext(),"Logged In",Toast.LENGTH_SHORT).show();
             finish();
-            //startActivity(new Intent(MainActivity.this,notesactivity.class));
+            startActivity(new Intent(MainActivity.this,notesactivity.class));
         }
         else
         {
